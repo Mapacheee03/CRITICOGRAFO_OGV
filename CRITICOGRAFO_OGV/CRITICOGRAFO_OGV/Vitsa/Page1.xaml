@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRITICOGRAFO_OGV.Vista.Page1"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#000000" Padding="20">
+
+            <Label Text="CRITICOGRAFO" HorizontalTextAlignment="Center" Margin="0,40,0,20" TextColor="#00FFD1" FontSize="50" FontFamily="AvenirNext-Bold"/>
+
+            <Label Text="Nombre:" FontSize="20" TextColor="#00FFD1"/>
+            <Entry Text="{Binding Nombre, Mode=TwoWay}" Placeholder="Ingrese su nombre" BackgroundColor="#00161A" PlaceholderColor="#00FFD1" TextColor="#00FFD1"/>
+
+            <Label Text="GÉNERO:" FontSize="20" TextColor="#00FFD1" Margin="0,20,0,0"/>
+            <StackLayout Orientation="Horizontal">
+                <RadioButton Content="Hombre" GroupName="Genero" TextColor="#00FFD1" IsChecked="{Binding Hombre}"/>
+                <RadioButton Content="Mujer" GroupName="Genero" TextColor="#00FFD1" IsChecked="{Binding Mujer}" />
+            </StackLayout>
+
+            <Label Text="Características:" FontSize="20" TextColor="#00FFD1" Margin="0,20,0,0"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <CheckBox Grid.Row="0" Color="#00FFD1" IsChecked="{Binding Alto }"/>
+                <Label Grid.Row="0" Text="ALTO" Margin="30,0,0,0" TextColor="#00FFD1"/>
+
+                <CheckBox Grid.Row="1" Color="#00FFD1" IsChecked="{Binding Feo}"/>
+                <Label Grid.Row="1" Text="FEO" Margin="30,0,0,0" TextColor="#00FFD1"/>
+
+                <CheckBox Grid.Row="2" Color="#00FFD1" IsChecked="{Binding Listo}"/>
+                <Label Grid.Row="2" Text="LISTO" Margin="30,0,0,0" TextColor="#00FFD1"/>
+
+                <CheckBox Grid.Row="3" Color="#00FFD1" IsChecked="{Binding Extravagante }"/>
+                <Label Grid.Row="3" Text="EXTRAVAGANTE" Margin="30,0,0,0" TextColor="#00FFD1"/>
+
+                <CheckBox Grid.Row="4" Color="#00FFD1" IsChecked="{Binding Raro}"/>
+                <Label Grid.Row="4" Text="Raro" Margin="30,0,0,0" TextColor="#00FFD1"/>
+
+                <CheckBox Grid.Row="5" Color="#00FFD1" IsChecked="{Binding Grande}"/>
+                <Label Grid.Row="5" Text="Grande" Margin="30,0,0,0" TextColor="#00FFD1"/>
+            </Grid>
+
+            <Button Command="{Binding MostrarCriticasCommand}" BackgroundColor="#00FFD1"  Text="CRITICAR" TextColor="#000000" CornerRadius="10" Margin="0,20,0,0"/>
+
+            <Grid x:Name="DatosIngresados" Margin="0,20,0,0" Padding="10" BackgroundColor="#00161A" >
+                <Label Text="{Binding MostrarCriticas}" TextColor="#00FFD1" FontSize="16" Margin="0,15,0,5"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
